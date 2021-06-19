@@ -13,7 +13,7 @@ import com.oneitthing.xdsv.ui.main.MainFrame;
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("started");
 
         SwingUtilities.invokeLater(() -> {
             new XdsvController();
