@@ -11,8 +11,8 @@ import javax.swing.JMenuItem;
 public class MainFrame extends JFrame {
 	public MainFrame() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setTitle("Xml Degital Signature Verifire");
-        setSize(800, 600);
+        setTitle("Xml Degital Signature Verifier");
+        setSize(1024, 600);
         setName("mainFrame");
 
         JMenuBar menuBar = new JMenuBar();
@@ -21,7 +21,7 @@ public class MainFrame extends JFrame {
         JMenu mnNewMenu = new JMenu("Menu");
         menuBar.add(mnNewMenu);
 
-        JMenuItem mntmNewMenuItem = new JMenuItem("Open Directory or Zip File");
+        JMenuItem mntmNewMenuItem = new JMenuItem("Open Directory");
         mnNewMenu.add(mntmNewMenuItem);
         mntmNewMenuItem.setName("mainFrame.jmiOpen");
 

@@ -3,9 +3,10 @@ package com.oneitthing.xdsv.ui.main.action;
 import java.awt.Component;
 import java.io.File;
 
+import javax.swing.JComponent;
 import javax.swing.JDesktopPane;
 import javax.swing.JFileChooser;
-import javax.swing.SwingUtilities;
+import javax.swing.JOptionPane;
 
 import com.oneitthing.swingcontrollerizer.action.BaseAction;
 import com.oneitthing.swingcontrollerizer.controller.ParameterMapping;
@@ -16,25 +17,27 @@ public class OpenAction extends BaseAction {
     @Override
     protected boolean prepare(ParameterMapping parameterMapping) throws Exception {
 
-//        JFileChooser jfc = new JFileChooser("/Users/nakanishishingo/src/job/marsnet3/src/assets/HM0501201210001");
-        JFileChooser jfc = new JFileChooser();
+        //        JFileChooser jfc = new JFileChooser("/Users/nakanishishingo/src/job/marsnet3/src/assets/HM0501201210001");
+        JFileChooser jfc = new JFileChooser("C:\\fujitsu\\src\\marsnet3\\src\\assets\\signed");
+
+        //        JFileChooser jfc = new JFileChooser();
         jfc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 
-        if(jfc.showOpenDialog((Component)parameterMapping.getEventSource()) != JFileChooser.APPROVE_OPTION) {
+        if (jfc.showOpenDialog((Component) parameterMapping.getEventSource()) != JFileChooser.APPROVE_OPTION) {
             return false;
         }
 
         File file = jfc.getSelectedFile();
 
-        IFrame iframe = new IFrame(file);
+        String xmlFileName = JOptionPane.showInputDialog((JComponent) parameterMapping.getEventSource(),
+                "root xml file name?", "index.rdf");
 
-        JDesktopPane desktop = (JDesktopPane)getComponent("desktop");
+        IFrame iframe = new IFrame(file, xmlFileName);
+
+        JDesktopPane desktop = (JDesktopPane) getComponent("desktop");
         desktop.add(iframe);
 
-        SwingUtilities.invokeLater(() -> {
-            desktop.getDesktopManager().openFrame(iframe);
-            desktop.getDesktopManager().activateFrame(iframe);
-        });
+        iframe.setVisible(true);
 
         return false;
     }
