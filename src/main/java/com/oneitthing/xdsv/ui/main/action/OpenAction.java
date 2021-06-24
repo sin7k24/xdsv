@@ -18,8 +18,8 @@ public class OpenAction extends BaseAction {
     protected boolean prepare(ParameterMapping parameterMapping) throws Exception {
 
         //        JFileChooser jfc = new JFileChooser("/Users/nakanishishingo/src/job/marsnet3/src/assets/HM0501201210001");
-        JFileChooser jfc = new JFileChooser("C:\\fujitsu\\src\\marsnet3\\src\\assets\\signed");
-
+//        JFileChooser jfc = new JFileChooser("C:\\fujitsu\\src\\marsnet3\\src\\assets\\signed");
+                JFileChooser jfc = new JFileChooser("C:\\tmp\\shinseishobyweb");
         //        JFileChooser jfc = new JFileChooser();
         jfc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 

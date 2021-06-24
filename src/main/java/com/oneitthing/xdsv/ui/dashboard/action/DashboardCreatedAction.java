@@ -58,7 +58,7 @@ public class DashboardCreatedAction extends BaseAction {
             DefaultMutableTreeNode treeNode = new DefaultMutableTreeNode(uri);
             documentsTreeNode.add(treeNode);
             
-            dashboard.getDigestValueMap().put(uri, digestValueNode.getTextContent());
+            dashboard.getDigestValueMap().put(uri, digestValueNode.getTextContent().trim());
         }
         
         // SignatureValue
@@ -68,7 +68,7 @@ public class DashboardCreatedAction extends BaseAction {
                 XPathConstants.NODE);
         DefaultMutableTreeNode signatureValueTreeNode = new DefaultMutableTreeNode("SignatureValue");
         rootTreeNode.add(signatureValueTreeNode);
-        dashboard.setSignatureValue(signatureValueNode.getTextContent());
+        dashboard.setSignatureValue(signatureValueNode.getTextContent().trim());
         
         // X509Certificate
         Node x509CertificateNode = (Node) xPath.evaluate(
@@ -77,7 +77,7 @@ public class DashboardCreatedAction extends BaseAction {
                 XPathConstants.NODE);
         DefaultMutableTreeNode x509CertificateTreeNode = new DefaultMutableTreeNode("X509Certificate");
         rootTreeNode.add(x509CertificateTreeNode);
-        dashboard.setCertificate(x509CertificateNode.getTextContent());
+        dashboard.setCertificate(x509CertificateNode.getTextContent().trim());
 
         DefaultTreeModel treeModel = new DefaultTreeModel(rootTreeNode);
 

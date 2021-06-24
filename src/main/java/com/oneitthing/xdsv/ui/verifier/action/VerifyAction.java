@@ -60,7 +60,7 @@ public class VerifyAction extends BaseAction {
         
         // get PublicKey from X509Certificate
         Node x509CertificateNode = document.getElementsByTagNameNS("*", "X509Certificate").item(0); 
-        String b64Certificate = x509CertificateNode.getTextContent();
+        String b64Certificate = x509CertificateNode.getTextContent().trim();
         byte[] certificate = Base64.decodeBase64(b64Certificate);
 
         InputStream is = new ByteArrayInputStream(certificate);
@@ -80,7 +80,7 @@ public class VerifyAction extends BaseAction {
 
         // convert SignatureValue to ByteArray
         Node signatureValueNode = document.getElementsByTagNameNS("*", "SignatureValue").item(0);
-        String b64SignatureValue = signatureValueNode.getTextContent();
+        String b64SignatureValue = signatureValueNode.getTextContent().trim();
         byte[] sign = Base64.decodeBase64(b64SignatureValue);
         append("SignatureValue :");
         append("-----------------------------");
