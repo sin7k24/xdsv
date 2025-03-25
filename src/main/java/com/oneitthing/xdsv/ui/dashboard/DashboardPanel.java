@@ -74,7 +74,7 @@ public class DashboardPanel extends JPanel {
         panel_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
         panel_1.add(jt, BorderLayout.CENTER);
 
-        JPanel panel = new TextViewerPanel(file);
+        JPanel panel = new TextViewerPanel(file, rootXmlFileName);
         panel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 
         JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, panel_1, panel);

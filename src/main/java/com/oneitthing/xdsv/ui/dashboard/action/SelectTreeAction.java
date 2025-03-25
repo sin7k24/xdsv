@@ -26,7 +26,7 @@ public class SelectTreeAction extends BaseAction {
         JSplitPane splitpane = (JSplitPane) getComponent("dashboardPanel.splitpane");
 
         if (sel.getLastPathComponent().toString().equals(dashboard.getRootXmlFileName())) {
-            TextViewerPanel textViewerPanel = new TextViewerPanel(dashboard.getFile());
+            TextViewerPanel textViewerPanel = new TextViewerPanel(dashboard.getFile(), dashboard.getRootXmlFileName());
             splitpane.setRightComponent(textViewerPanel);
         } else if (sel.getLastPathComponent().toString().equals("SignatureValue")) {
             SignatureValueViewerPanel signatureValueViewerPanel = new SignatureValueViewerPanel(

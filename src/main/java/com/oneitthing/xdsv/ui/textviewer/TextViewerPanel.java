@@ -11,13 +11,20 @@ import javax.swing.border.BevelBorder;
 public class TextViewerPanel extends JPanel {
     private File file;
     
+    private String rootXmlFileName;
+
     public File getFile() {
         return this.file;
     }
     
-    public TextViewerPanel(File file) {
+    public String getRootXmlFileName() {
+        return this.rootXmlFileName;
+    }
+    
+    public TextViewerPanel(File file, String rootXmlFileName) {
         setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
         this.file = file;
+        this.rootXmlFileName = rootXmlFileName;
         
         setLayout(new BorderLayout(0, 0));
         setName("textViewerPanel");
