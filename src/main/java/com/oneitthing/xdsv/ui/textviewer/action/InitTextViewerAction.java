@@ -19,10 +19,11 @@ public class InitTextViewerAction  extends BaseAction {
         try {
             TextViewerPanel textViewerPanel = (TextViewerPanel)parameterMapping.getEventSource();
             File file = textViewerPanel.getFile();
+            String rootXmlFileName = textViewerPanel.getRootXmlFileName();
             
             JTextArea textArea = (JTextArea)getComponent(textViewerPanel, "textViewerPanel.textArea");
             
-            BufferedReader reader = new BufferedReader(new FileReader(new File(file.getAbsolutePath() + File.separator + "index.rdf")));
+            BufferedReader reader = new BufferedReader(new FileReader(new File(file.getAbsolutePath() + File.separator + rootXmlFileName)));
             String line;
             while((line = reader.readLine()) != null) {
                 textArea.append(line + System.getProperty("line.separator"));
